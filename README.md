@@ -18,5 +18,5 @@ tns debug <platform> --bundle
 tns run <platform> --bundle
 
 # Build, watch for changes and generate QR code for the Playground
-tns preview --bundle
+tns preview  --bundle
 ```
