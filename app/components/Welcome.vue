@@ -1,32 +1,18 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
-        </GridLayout>
+    <Page class="page">
+        <ActionBar class="action-bar">
+            <Label class="action-bar-title" text="This is Home Component"></Label>
+        </ActionBar>
+        <StackLayout>
+            <Button text="Dashboard" horizontalAlignment="center" @tap="$goto('dashboard')" />
+        </StackLayout>
     </Page>
 </template>
 
-<script >
-  export default {
-    data() {
-      return {
-        msg: 'Welcome to the Forehead Game!'
-      }
-    }
-  }
+<script>
+    export default { };
 </script>
 
 <style scoped>
-    ActionBar {
-        background-color: #53ba82;
-        color: #ffffff;
-    }
-
-    .message {
-        vertical-align: center;
-        text-align: center;
-        font-size: 20;
-        color: #333333;
-    }
+    
 </style>
