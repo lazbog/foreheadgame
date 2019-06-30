@@ -19,6 +19,9 @@
 
     export default {
         methods: {
+            sleep: function() {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            },
             startAccelerometer: function() {
                 if (accelerometerListening) {
                     accelerometer.stopAccelerometerUpdates();
@@ -39,14 +42,25 @@
                             .z.toFixed(
                                 1
                             );
+                            var currentState = 0;
                         if (this.accelerometerValues.z >= 0.8) {
-                            this.background = "background-blue";
+                            // var startState = Date.now();
+                            // console.log("1 %s", startState);
+                            // console.log("2 %s", currentState)
+                            // while (currentState - startState <= 100) {
+                            //     console.log("3 %s", startState);
+                            //     console.log("4 %s", currentState)
+                            //     currentState = Date.now()
+                            //     console.log("5 %s", currentState)
+                            //     this.background = "background-white";
+                            // }
+                            this.background = "background-blue";                            
                         } else if (this.accelerometerValues.z <= -0.8) {
                             this.background = "background-red";
                         }
                         else this.background = "background-white";
                     }, {
-                        sensorDelay: "game"
+                        sensorDelay: "normal"
                     }
                 );
             }
